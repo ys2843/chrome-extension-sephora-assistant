@@ -1,0 +1,13 @@
+{
+  "name": "SephoraForPregnancy",
+  "version": "0.0.1",
+  "description": "A tool for checking harmful ingredients in cosmetics on Sephora.com",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://www.sephora.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
