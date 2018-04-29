@@ -3,10 +3,15 @@
   "version": "0.0.1",
   "description": "A tool for checking harmful ingredients in cosmetics on Sephora.com",
   "manifest_version": 2,
+  "author": "Yang Shi",
   "content_scripts": [
     {
-      "matches": ["https://www.sephora.com/*"],
-      "js": ["content.js"]
+      "matches": [
+        "https://www.sephora.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ]
 }

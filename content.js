@@ -1,8 +1,9 @@
+// We need to wait until all the data is loaded
 window.addEventListener("load", onLoad, false);
 
+// Check if there is ingredients information by searching in the header of the tab
 function returnIngredientsTab() {
-    var parent = document.getElementsByClassName("css-1lqspdf");
-    var divs = parent[0].getElementsByTagName('div')
+    var divs = document.getElementsByClassName("css-1lqspdf")[0].getElementsByTagName('div');
     for (var i = 0, l = divs.length; i < l; i++) {
         if (divs[i].textContent === 'Ingredients') {
             return i - 1;
@@ -11,7 +12,7 @@ function returnIngredientsTab() {
     return -1;
 }
 
-
+// Insert a text node to show the condition of the cosmetic
 function onLoad(e) {
     var ingreNum = returnIngredientsTab();
     var h = document.createElement("h3");
@@ -34,6 +35,7 @@ function onLoad(e) {
 
 }
 
+// Use a string search to find harmful ingredients in the products
 function checkIngredients(ingredients) {
     var result = [];
     var skincare_ingredients_to_avoid = ['lead', 'triclosan', 'oxybenzone', 'bht',
