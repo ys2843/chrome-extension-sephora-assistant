@@ -12,8 +12,19 @@ function returnIngredientsTab() {
     return -1;
 }
 
+
+function sendProductName() {
+    var brand = document.querySelector("a.css-zvvfrv span.css-cjz2sh").textContent;
+    var name = document.querySelector("span.css-1g2jq23").textContent;
+    chrome.runtime.sendMessage({"method": "sephora" ,"brand": brand, "name": name}, function () {
+    });
+}
+
 // Insert a text node to show the condition of the cosmetic
 function onLoad(e) {
+
+    sendProductName();
+
     var ingreNum = returnIngredientsTab();
     var h = document.createElement("h3");
     var t = document.createTextNode("Unknown Ingredients");
